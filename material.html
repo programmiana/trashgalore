@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TRASH GALORE</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <a href="index.html">back</a>
+  <div class="titleFlex">
+    <h1> Material <img src="./assets/images/material.svg"></h1>
+  </div>
+
+  <div class="flexbox thinBlackBorder">
+  <form>
+  <div class="grid-container">
+  
+  <h2 class="title1 title">Art </h2>
+  <h2 class="title2 title">Sorte</h2>
+  <h2 class="title3 title">Eigenschaft</h2>
+  <h2 class="title4 title">Menge</h2>
+  <h2 class="title5 title">Gewicht</h2>
+  <h2 class="title6 title">co2 Equivalent Herstellung</h2>
+  <h2 class="title7 title">co2 Equivalent Entsorgung</h2>
+  <div class="art"><label for="art" >Art</label>
+    <img class="arrowDownOne" label="Art wählen" src="/assets/images/arrow.svg">
+    <select size="10" name="art" type="text" id="selectOne" palceholder="select one" class="hidden-visually">
+    </select></div>
+  <div class="sorte"><label for="sorte" >Sorte</label>
+    <img class="arrowDownTwo" label="Sorte wählen" src="/assets/images/arrow.svg">
+    <select size="10" name="sorte" type="text"  id="selectTwo" class="hidden-visually">
+    </select></div>
+    <div class="eigenschaft"><label for="size">Eigenschaft</label>
+      <img class="arrowDownThree" label="Eigenschaft wählen" src="/assets/images/arrow.svg">
+      <select size="10" name="eigenschaft" type="text"  id="selectThree" class="hidden-visually">
+      </select>
+      </div>
+  <div class="menge"><label for="size" >Menge</label>
+    <input name="menge" type="text" id="inputMenge">
+    </div>
+  <div class="gewicht"><label for="gewicht" class="title">Gewicht</label>
+    <input name="gewicht" type="text" id="inputGewicht">
+  </input></div>
+  <div class="production"><label for="production" class="title">co2 Equivalent Herstellung</label>
+  </div>
+  <div class="disposal"><label for="disposal" class="title">co2 Equivalent Entsorgung</label>
+ </div>
+</div>
+</form>
+</div>
+
+  <script src="./script.js" type="module" ></script>
+
+</body>
+
+</html>

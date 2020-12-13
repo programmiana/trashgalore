@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'HeadingBold'; /*a name to be used later*/
+  src: url('assets/fonts/Heading-Pro-Bold-trial.ttf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'MyriadBold'; /*a name to be used later*/
+  src: url('assets/fonts/MyriadPro-BoldCond.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'MyriadRegular'; /*a name to be used later*/
+  src: url('assets/fonts/MyriadPro-Cond.otf'); /*URL to font*/
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+body {
+    transition: background-color 0.4s;
+    font-family: MyriadRegular;
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: 'HeadingBold';
+    font-size: 10rem;
+    margin: 5rem 0 0 0;
+    transition: all 0.4s;
+    position: relative;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5rem;
+  }
+  
+  .colors span {
+    color: rgba(0, 0, 0, 0.4);
+    flex:1;
+    padding: 1rem;
+    font-weight: 900;
+  }
+  
+  .colors span.dark {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  @keyframes jump {
+    from {
+      transform: scale(2.5) rotate(-3deg);
+      box-shadow: var(--box-shadow);
+    }
+    to {
+      transform: scale(1) rotate(0);
+    }
+  }
+  label
+{
+    display:none;
+}
+
+  .grid-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    grid-template-areas:
+      "title1 title2 title3 title4 title5 title6 title7"
+      "art sorte eigenschaft menge gewicht production disposal "
+
+    }
+  .title1 {
+    grid-area: title1; 
+  }
+  .title2 {
+    grid-area: title2; 
+  }
+  .title3 {
+    grid-area: title3; 
+  }
+  .title4 {
+    grid-area: title4; 
+  }
+  .title5{
+    grid-area: title5; 
+  }
+  .title6 {
+    grid-area: title6; 
+  }
+  .art { grid-area: art; }
+  .sorte { grid-area: sorte; }
+  .eigenschaft { grid-area: eigenschaft; }
+  .menge {grid-area: menge}
+  .gewicht { grid-area: gewicht; }
+  .production { grid-area: production;  border: 1px solid #EF5DA8; height: 50%}
+  .disposal { grid-area: disposal; border: 1px solid #EF5DA8; height: 50%}
+
+  select {
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none;
+    outline:none; 
+     /* get rid of default appearance for IE8, 9 and 10*/
+  }
+
+  .flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flexbox select {
+    margin:2em;
+  }
+
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .colors span.got {
+    text-decoration: line-through;
+    animation: jump 0.2s ease-in-out 2 alternate-reverse;
+  }
+  
+  .done {
+    text-decoration: line-through;
+    color:red;
+  }
+
+  .title {
+    border: 1px solid #EF5DA8;
+    padding: 1em 2em;
+  }
+
+  .homeTitle {
+    border: 1px solid black;
+    padding: 1em 2em;
+    margin: 1em 2em;
+  }
+
+  .homeTitle img {
+    margin: 0.5em;
+  }
+
+ a:hover {
+  transition: transform .5s ease;
+  transform: scale(1.02);
+  }
+
+  .thinBlackBorder {
+    border: solid 1px black;
+    padding: 1em 2em;
+  }
+  
+  .titleFlex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hidden-all {
+    display: none;
+  }
+
+  .hidden-visually {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
+} 
