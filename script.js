@@ -11,17 +11,20 @@ const arrowDownOne = document.querySelector(".arrowDownOne");
 const arrowDownTwo = document.querySelector(".arrowDownTwo");
 const arrowDownThree = document.querySelector(".arrowDownThree");
 
-let inputArray = [];
-selectOne.addEventListener("click", handleSelect);
-inputMenge.addEventListener("change", handleMenge);
-inputGewicht.addEventListener("blur", handleGewicht);
+selectOne.addEventListener("click", function(e){handleSelects(e, art, selectTwo, arrowDownOne, arrowDownTwo)});
+inputMenge.addEventListener("change", handleInput);
+inputGewicht.addEventListener("change", handleInput);
 arrowDownOne.addEventListener("click", handleArrowClick);
 arrowDownTwo.addEventListener("click", handleArrowClick);
 arrowDownThree.addEventListener("click", handleArrowClick);
+selectTwo.addEventListener("click", function(e){handleSelects(e, woodOptions, selectThree, arrowDownTwo, arrowDownThree)});
+selectThree.addEventListener("click", function(e){handleSelects(e, woodSizes)});
+arrowDownThree.addEventListener('click', handleArrowClick);
+
+let inputArray = [];
 
 function handleArrowClick(e) {
   e.preventDefault();
-
   if(e.currentTarget === arrowDownOne) {
     selectOne.classList.remove("hidden-visually");
     selectOne.classList.add("thinBlackBorder");
@@ -31,8 +34,6 @@ function handleArrowClick(e) {
   }
 }
 
-
-// utils
 function htmlSelectArray(arr) {
   const html = arr
     .map(
@@ -51,74 +52,30 @@ function removeHidden(select, arrow, nextArrow){
   
 }
 
-//select handlers
-function handleSelect(e) {
+function handleSelects(e, arr, select, arrowDown, nextArrowDown){
   e.preventDefault();
-
   const option = e.currentTarget.options;
-
-    const nextOption = art.find(
-      (secondOption) => secondOption.id === option.selectedIndex
-    );
-    const html = htmlSelectArray(nextOption.options);
-
-    selectTwo.addEventListener("click", handleSecondSelect);
-    
-    removeHidden(selectTwo, arrowDownOne, arrowDownTwo)
-
-    selectTwo.innerHTML = html;
- 
-}
-
-function handleSecondSelect(e) {
-  e.preventDefault();
-
-  const option = e.currentTarget.options;
-    const nextOption = woodOptions.find(
-      (secondOption) => secondOption.id === option.selectedIndex
-    );
-    selectThree.addEventListener("click", handleThirdSelect);
-    const html = htmlSelectArray(nextOption.options);
-    arrowDownThree.addEventListener('click', handleArrowClick)
-
-    removeHidden(selectThree, arrowDownTwo, arrowDownThree)
-
-    selectThree.innerHTML = html;
+  const nextOptionSet = arr.find((nextOptions) => nextOptions.id === option.selectedIndex);
+  if (select) {
+    const html = htmlSelectArray(nextOptionSet.options);
+    select.innerHTML = html;
   }
-
-function handleThirdSelect(e) {
-  e.preventDefault();
-
-  const option = e.currentTarget.options;
-  if (option.selectedIndex === 0) {
-    const selectedItem = woodSizes.find(
-      (thisOption) => thisOption.id === option.selectedIndex
-    );
-    inputArray.push(selectedItem.value);
-  }
+  (arrowDown && nextArrowDown) ? removeHidden(select, arrowDown, nextArrowDown) : null;
+  inputArray.push(nextOptionSet.name)
 }
 
+function handleInput(e){
+e.preventDefault();
+const value = e.currentTarget.value;
+inputArray.push(value);
 
-function handleMenge(e) {
-  e.preventDefault();
-  const valueMenge = e.currentTarget.value;
-  console.log(valueMenge)
-  inputArray.push(valueMenge);
-  console.log(inputArray);
-}
-console.log(inputArray);
-
-function handleGewicht(e) {
-  e.preventDefault();
-  const valueGewicht = e.currentTarget.value;
-  inputArray.push(valueGewicht);
-  console.log(inputArray);
+if(inputArray.length === 5){
   generateContent();
+}
 }
 
 function generateContent(){
   const productionContent = inputArray.map((el) => `<p>${el}</p>`).join('')
   console.log(productionContent);
   production.innerHTML = productionContent;
-
 }

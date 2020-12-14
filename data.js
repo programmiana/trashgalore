@@ -35,7 +35,6 @@ export let woodSizes = [ {
 },
 {
   name: "98g/qm",
-  
   value: "98",
   id: 2,
 },
@@ -50,40 +49,50 @@ export let woodSizes = [ {
 export let woodOptions = [ {
   name: "MDF",
   id: 0,
-  options: [woodSizes[0], woodSizes[1], woodSizes[2], woodSizes[3]]
+  options: [woodSizes[0], woodSizes[1], woodSizes[2], woodSizes[3]],
+  value: "MDF"
 },
 {
   name: "Seekiefernplatte",
   id: 1,
+  value: "Seekiefernplatte"
   
 },
 {
   name: "MesseRipsTeppich",
   id: 2,
+  value: "MesseRipsTeppich"
 },
 {
   name: "KVH",
   id: 3,
+  value: "KVH"
 },
 ]
 
 export let stoffOptions = [ {
   name: "Stoff 1",
   id: 0,
-  options: [woodSizes[0], woodSizes[1], woodSizes[2], woodSizes[3]]
+  options: [woodSizes[0], woodSizes[1], woodSizes[2], woodSizes[3]],
+  value: "Stoff 1"
 },
 {
   name:"Stoff 2",
   id: 1,
+  value: "Stoff 2"
   
 },
 {
   name: "Stoff 3",
   id: 2,
+  value: "Stoff 3"
+
 },
 {
   name: "Stoff 4",
   id: 3,
+  value: "Stoff 4"
+
 },
 ]
 
@@ -91,15 +100,18 @@ export let art = [
   {
     name: "Holz",
     id: 0,
+    value: "Holz",
     options: [woodOptions[0], woodOptions[1]],
   },
   {
     name: "Stoff",
+    value: "Stoff",
     id: 1,
     options: [stoffOptions[0], stoffOptions[1], stoffOptions[2], stoffOptions[3]]
   },
   {
     name: "Whatever",
+    value: "Whatever",
     id: 2,
     options: [woodOptions[0], woodOptions[1]],
   },
