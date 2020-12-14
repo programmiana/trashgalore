@@ -44,12 +44,11 @@ function htmlSelectArray(arr) {
   return html;
 }
 
-function removeHidden(select, arrow, nextArrow){
+function removeHidden(select, arrow, nextArrowDown){
   select.classList.remove("hidden-visually");
   select.classList.add("thinBlackBorder");
   arrow.classList.add("hidden-visually");
-  nextArrow ? nextArrow.classList.add("hidden-visually") : null;
-  
+  nextArrowDown ? nextArrowDown.classList.add("hidden-visually") : null;
 }
 
 function handleSelects(e, arr, select, arrowDown, nextArrowDown){
@@ -69,9 +68,7 @@ e.preventDefault();
 const value = e.currentTarget.value;
 inputArray.push(value);
 
-if(inputArray.length === 5){
-  generateContent();
-}
+inputArray.length === 5 ? generateContent() : null
 }
 
 function generateContent(){
