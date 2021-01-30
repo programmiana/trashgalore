@@ -1,4 +1,6 @@
-import { art, woodSizes, woodOptions, amount } from "./data.js";
+import { art, woodSizes, woodOptions } from "./data.js";
+
+// handle money: store prices as cents strings, pass them into a parseFloat and multiply by 1000
 
 const selectOne = document.getElementById("selectOne");
 const selectTwo = document.getElementById("selectTwo");
